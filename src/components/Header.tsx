@@ -38,7 +38,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
           <img
-            src="src/assets/images/logo.png"
+            src="./logo.png" // Adjust the path to your logo
             alt="Brilliant Science Institute Logo"
             className="h-16 w-auto"
           />

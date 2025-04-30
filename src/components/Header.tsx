@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,26 +13,32 @@ const Header = () => {
 
   return (
     <header className="w-full bg-white fixed top-0 left-0 right-0 shadow-sm z-50">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-          <span className="font-poppins font-bold text-2xl lg:text-3xl">
-            <span className="text-brilliant-blue-dark">Brilliant</span>
-            <span className="text-brilliant-purple">Science</span>
-          </span>
-        </div>
+      <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+        <Link to="/" className="flex items-center space-x-2">
+          <img 
+            src="/lovable-uploads/c70d3e4f-65cd-4639-95e5-c4fa6073027d.png" 
+            alt="Brilliant Science Institute Logo" 
+            className="h-16 w-auto"
+          />
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-8">
-          <a href="#" className="font-medium hover:text-brilliant-blue transition-colors">Home</a>
-          <a href="#programs" className="font-medium hover:text-brilliant-blue transition-colors">Programs</a>
-          <a href="#about" className="font-medium hover:text-brilliant-blue transition-colors">About Us</a>
-          <a href="#faculty" className="font-medium hover:text-brilliant-blue transition-colors">Our Faculty</a>
-          <a href="#testimonials" className="font-medium hover:text-brilliant-blue transition-colors">Testimonials</a>
-          <a href="#contact" className="font-medium hover:text-brilliant-blue transition-colors">Contact</a>
+          <Link to="/" className="font-medium hover:text-brilliant-blue transition-colors">Home</Link>
+          <Link to="/batches" className="font-medium hover:text-brilliant-blue transition-colors">Batches</Link>
+          <Link to="/about" className="font-medium hover:text-brilliant-blue transition-colors">About Us</Link>
+          <Link to="/faculty" className="font-medium hover:text-brilliant-blue transition-colors">Faculty</Link>
+          <Link to="/results" className="font-medium hover:text-brilliant-blue transition-colors">Results</Link>
+          <Link to="/contact" className="font-medium hover:text-brilliant-blue transition-colors">Contact</Link>
         </nav>
         
-        <div className="hidden lg:block">
-          <Button className="bg-brilliant-purple hover:bg-brilliant-purple-dark">Enroll Now</Button>
+        <div className="hidden lg:flex space-x-4">
+          <Button asChild className="bg-brilliant-blue hover:bg-brilliant-blue-dark">
+            <Link to="/register">Register</Link>
+          </Button>
+          <Button asChild className="bg-brilliant-purple hover:bg-brilliant-purple-dark">
+            <Link to="/login">Login</Link>
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -48,13 +55,20 @@ const Header = () => {
       {isMenuOpen && (
         <div className="lg:hidden bg-white border-t py-4 px-4 shadow-lg">
           <div className="flex flex-col space-y-4">
-            <a href="#" className="font-medium hover:text-brilliant-blue px-4 py-2" onClick={() => setIsMenuOpen(false)}>Home</a>
-            <a href="#programs" className="font-medium hover:text-brilliant-blue px-4 py-2" onClick={() => setIsMenuOpen(false)}>Programs</a>
-            <a href="#about" className="font-medium hover:text-brilliant-blue px-4 py-2" onClick={() => setIsMenuOpen(false)}>About Us</a>
-            <a href="#faculty" className="font-medium hover:text-brilliant-blue px-4 py-2" onClick={() => setIsMenuOpen(false)}>Our Faculty</a>
-            <a href="#testimonials" className="font-medium hover:text-brilliant-blue px-4 py-2" onClick={() => setIsMenuOpen(false)}>Testimonials</a>
-            <a href="#contact" className="font-medium hover:text-brilliant-blue px-4 py-2" onClick={() => setIsMenuOpen(false)}>Contact</a>
-            <Button className="bg-brilliant-purple hover:bg-brilliant-purple-dark w-full">Enroll Now</Button>
+            <Link to="/" className="font-medium hover:text-brilliant-blue px-4 py-2" onClick={() => setIsMenuOpen(false)}>Home</Link>
+            <Link to="/batches" className="font-medium hover:text-brilliant-blue px-4 py-2" onClick={() => setIsMenuOpen(false)}>Batches</Link>
+            <Link to="/about" className="font-medium hover:text-brilliant-blue px-4 py-2" onClick={() => setIsMenuOpen(false)}>About Us</Link>
+            <Link to="/faculty" className="font-medium hover:text-brilliant-blue px-4 py-2" onClick={() => setIsMenuOpen(false)}>Faculty</Link>
+            <Link to="/results" className="font-medium hover:text-brilliant-blue px-4 py-2" onClick={() => setIsMenuOpen(false)}>Results</Link>
+            <Link to="/contact" className="font-medium hover:text-brilliant-blue px-4 py-2" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+            <div className="flex flex-col space-y-2 pt-2">
+              <Button asChild className="bg-brilliant-blue hover:bg-brilliant-blue-dark w-full">
+                <Link to="/register">Register</Link>
+              </Button>
+              <Button asChild className="bg-brilliant-purple hover:bg-brilliant-purple-dark w-full">
+                <Link to="/login">Login</Link>
+              </Button>
+            </div>
           </div>
         </div>
       )}

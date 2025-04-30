@@ -9,10 +9,14 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
+          <div className="flex flex-col items-center">
+            <img 
+              src="src/assets/images/logo.png" 
+              alt="Brilliant Science Institute Logo" 
+              className="h-16 w-auto mb-4 rounded-xl align-center"/>
             <h3 className="font-bold text-2xl mb-6">
               <span className="text-white">Brilliant</span>
-              <span className="text-brilliant-purple-light">Science</span>
+              <span className="text-brilliant-purple-light"> Science Institute</span>
             </h3>
             <p className="text-gray-300 mb-6">
               Empowering students to achieve academic excellence and build a strong foundation for a successful future.

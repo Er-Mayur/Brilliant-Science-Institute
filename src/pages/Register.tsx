@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
+
 const Register = () => {
   const [searchParams] = useSearchParams();
   const batchId = searchParams.get('batch');

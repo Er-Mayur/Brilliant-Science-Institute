@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, User } from 'lucide-react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from '../firebase'; // adjust the path
+import { auth } from '../firebase'; 
 
 const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,10 +40,13 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Helper function to check if the current link is active
+  const isActive = (path) => location.pathname === path ? 'text-brilliant-purple font-bold' : 'font-medium hover:text-brilliant-blue transition-colors';
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all ${
-        isScrolled ? 'bg-white/80 backdrop-blur shadow-sm py-4' : 'bg-transparent py-6'
+        isScrolled ? 'bg-white/80 backdrop-blur shadow-sm py-4' : 'bg-white/80 backdrop-blur shadow-sm py-5'
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -55,12 +59,12 @@ const Header = () => {
         </Link>
 
         <nav className="hidden lg:flex items-center space-x-8">
-          <Link to="/" className="font-medium hover:text-brilliant-blue transition-colors">Home</Link>
-          <Link to="/batches" className="font-medium hover:text-brilliant-blue transition-colors">Batches</Link>
-          <Link to="/about" className="font-medium hover:text-brilliant-blue transition-colors">About Us</Link>
-          <Link to="/faculty" className="font-medium hover:text-brilliant-blue transition-colors">Faculty</Link>
-          <Link to="/results" className="font-medium hover:text-brilliant-blue transition-colors">Results</Link>
-          <Link to="/contact" className="font-medium hover:text-brilliant-blue transition-colors">Contact</Link>
+          <Link to="/" className={`${isActive('/')}`}>Home</Link>
+          <Link to="/batches" className={`${isActive('/batches')}`}>Batches</Link>
+          <Link to="/about" className={`${isActive('/about')}`}>About Us</Link>
+          {/* <Link to="/faculty" className={`${isActive('/faculty')}`}>Faculty</Link> */}
+          <Link to="/results" className={`${isActive('/results')}`}>Results</Link>
+          <Link to="/contact" className={`${isActive('/contact')}`}>Contact</Link>
         </nav>
 
         <div className="hidden lg:flex space-x-4">
@@ -96,7 +100,7 @@ const Header = () => {
               <Link
                 key={i}
                 to={path}
-                className="font-medium hover:text-brilliant-blue px-4 py-2"
+                className={`font-medium hover:text-brilliant-blue px-4 py-2 ${location.pathname === path ? 'text-brilliant-blue font-semibold' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {path === '/' ? 'Home' : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}

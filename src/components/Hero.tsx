@@ -11,10 +11,10 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
             <h1 className="text-4xl lg:text-6xl font-poppins font-bold mb-6">
-              Unlock Your <span className="text-gradient">Academic Potential</span>
+            Welcome to <span className="text-gradient">Brilliant Science Institute</span>
             </h1>
             <p className="text-lg lg:text-xl mb-8 text-gray-700">
-              Brilliant Science Institute provides expert coaching for Classes 8-12 and competitive exams like NEET & JEE. Join us for academic excellence and guaranteed success.
+              Brilliant Science Institute provides expert coaching for Classes 8-12 and competitive exams like NEET & JEE. Join us to excel in competitive exams with our expert guidance.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Button asChild className="bg-brilliant-blue hover:bg-brilliant-blue-dark text-lg py-6 px-8">

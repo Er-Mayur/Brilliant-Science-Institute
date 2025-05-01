@@ -1,9 +1,10 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle} from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const About = () => {
+const AboutUs = () => {
   const advantages = [
     'Expert faculty with years of teaching experience',
     'Limited batch size for personalized attention',
@@ -60,8 +61,9 @@ const About = () => {
               ))}
             </div>
             
+
             <Button className="bg-brilliant-blue hover:bg-brilliant-blue-dark">
-              Learn More About Us
+              <Link to="/about">Learn More About Us</Link>
             </Button>
           </div>
         </div>
@@ -70,4 +72,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutUs;

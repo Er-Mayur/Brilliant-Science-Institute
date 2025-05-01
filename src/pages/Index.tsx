@@ -3,7 +3,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Programs from '@/components/Programs';
-import About from '@/components/About';
+import About from '@/components/AboutUs';
 import Faculty from '@/components/Faculty';
 import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';

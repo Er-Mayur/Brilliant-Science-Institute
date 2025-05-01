@@ -4,25 +4,19 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, FlaskConical, TestTube } from 'lucide-react';
 
 const ContactForm = () => {
   return (
-    <section id="contact" className="py-16 bg-white">
+    <section className="py-16">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold font-poppins mb-4">
-            Get In <span className="text-gradient">Touch</span>
-          </h2>
-          <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Have questions or want to join Brilliant Science Institute? Reach out to us today!
-          </p>
-        </div>
-        
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <div className="bg-white rounded-lg shadow-lg p-6 lg:p-8">
-              <h3 className="text-2xl font-bold mb-6">Send Us A Message</h3>
+              <h2 className="text-2xl font-bold mb-6 flex items-center">
+                <FlaskConical className="mr-2 h-6 w-6 text-brilliant-blue" />
+                <span>Send Us A Message</span>
+              </h2>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -34,14 +28,14 @@ const ContactForm = () => {
                     <Input id="email" type="email" placeholder="Your email" />
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label htmlFor="phone" className="text-sm font-medium">Phone Number</label>
                     <Input id="phone" placeholder="Your phone" />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="course" className="text-sm font-medium">Program Interested In</label>
+                    <label htmlFor="program" className="text-sm font-medium">Program Interested In</label>
                     <Select>
                       <SelectTrigger>
                         <SelectValue placeholder="Select program" />
@@ -57,57 +51,60 @@ const ContactForm = () => {
                     </Select>
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium">Message</label>
                   <Textarea id="message" placeholder="Your message or query" rows={4} />
                 </div>
-                
+
                 <Button className="bg-brilliant-purple hover:bg-brilliant-purple-dark w-full">
                   Send Message
                 </Button>
               </form>
             </div>
           </div>
-          
+
           <div>
             <div className="bg-gray-50 rounded-lg shadow-lg p-6 lg:p-8 h-full">
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+              <h2 className="text-2xl font-bold mb-6 flex items-center">
+                <TestTube className="mr-2 h-6 w-6 text-brilliant-purple" />
+                <span>Contact Information</span>
+              </h2>
               <div className="space-y-8">
                 <div className="flex items-start">
                   <div className="bg-brilliant-blue/10 p-3 rounded-full mr-4">
                     <MapPin className="h-6 w-6 text-brilliant-blue" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-lg">Our Location</h4>
-                    <p className="text-gray-600">123 Education Street, Knowledge City, India - 110001</p>
+                    <h3 className="font-medium text-lg">Our Location</h3>
+                    <p className="text-gray-600">Brilliant Science Institute Plot no 2 Pankaj Nagar, Chopda, India, Maharashtra</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="bg-brilliant-purple/10 p-3 rounded-full mr-4">
                     <Phone className="h-6 w-6 text-brilliant-purple" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-lg">Call Us</h4>
-                    <p className="text-gray-600">+91 98765 43210</p>
-                    <p className="text-gray-600">+91 12345 67890</p>
+                    <h3 className="font-medium text-lg">Call Us</h3>
+                    <p className="text-gray-600">+91 94050 54723</p>
+                    <p className="text-gray-600">+91 92840 60899</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="bg-brilliant-orange/10 p-3 rounded-full mr-4">
                     <Mail className="h-6 w-6 text-brilliant-orange" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-lg">Email Us</h4>
+                    <h3 className="font-medium text-lg">Email Us</h3>
                     <p className="text-gray-600">info@brilliantscience.edu</p>
                     <p className="text-gray-600">admissions@brilliantscience.edu</p>
                   </div>
                 </div>
-                
+
                 <div>
-                  <h4 className="font-medium text-lg mb-3">Working Hours</h4>
+                  <h3 className="font-medium text-lg mb-3">Working Hours</h3>
                   <div className="space-y-2">
                     <div className="flex justify-between">
                       <p className="text-gray-600">Monday - Friday:</p>

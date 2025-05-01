@@ -96,7 +96,7 @@ const Header = () => {
       {isMenuOpen && (
         <div className="lg:hidden bg-white border-t py-4 px-4 shadow-lg">
           <div className="flex flex-col space-y-4">
-            {['/', '/batches', '/about', '/faculty', '/results', '/contact'].map((path, i) => (
+            {['/', '/batches', '/about', '/results', '/contact'].map((path, i) => (
               <Link
                 key={i}
                 to={path}

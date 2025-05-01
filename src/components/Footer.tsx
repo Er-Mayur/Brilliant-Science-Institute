@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="flex flex-col items-center">
             <img 
-              src="./logo.png" 
+              src="./footer_logo.png" 
               alt="Brilliant Science Institute Logo" 
               className="h-16 w-auto mb-4 rounded-xl align-center"/>
             <h3 className="font-bold text-2xl mb-6">
